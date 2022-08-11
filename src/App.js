@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>tudulist</h1>
+
+      <h2 class="hidden" id="advise">
+        Chuparemilpija tenes que poner titulo y descripcion fracasdo
+      </h2>
+
+      <table id="table">
+        <tr class="title" id="title">
+          <td>
+            <input type="text" placeholder="Todo title" id="titleInput" />
+          </td>
+
+          <td>
+            <input type="text" placeholder="Todo description" id="descInput" />
+          </td>
+
+          <td>
+            <button id="add">add</button>
+          </td>
+
+          <td>
+            <p>done</p>
+          </td>
+        </tr>
+      </table>
     </div>
   );
 }
