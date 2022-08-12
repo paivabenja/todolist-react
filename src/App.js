@@ -1,35 +1,39 @@
+import { tab } from "@testing-library/user-event/dist/tab";
+import { useState } from "react";
 import "./App.css";
+import Todo from "./components/Todo";
 
-function App() {
+const App = () => {
+  let table = document.getElementById("table");
+  console.log(table)
+  let [nextId, setNextId] = useState(0);
+
+  const getId = () => {
+    return;
+  };
+
+  const addTodo = () => {
+    let newTodo = document.createElement('Todo')
+    table.appendChild(newTodo);
+  };
+
   return (
     <div className="App">
       <h1>tudulist</h1>
-
-      <h2 class="hidden" id="advise">
-        Chuparemilpija tenes que poner titulo y descripcion fracasdo
-      </h2>
-
       <table id="table">
-        <tr class="title" id="title">
-          <td>
-            <input type="text" placeholder="Todo title" id="titleInput" />
-          </td>
-
-          <td>
-            <input type="text" placeholder="Todo description" id="descInput" />
-          </td>
-
-          <td>
-            <button id="add">add</button>
-          </td>
-
-          <td>
-            <p>done</p>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>
+              <button onClick={addTodo()}>AddTodo</button>
+            </th>
+            <th>Is done</th>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
-}
+};
 
 export default App;
